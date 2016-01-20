@@ -1,5 +1,6 @@
 package io.github.charly1811.bookexampledemo;
 
+import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity implements SearchTask.Search
         }
 
         RecyclerView recyclerView = binding.booksGrid;
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT ? 2 : 3
+        );
         BookListAdapter adapter = new BookListAdapter(volumeList, gridLayoutManager.getSpanCount());
 
         recyclerView.setLayoutManager(gridLayoutManager);

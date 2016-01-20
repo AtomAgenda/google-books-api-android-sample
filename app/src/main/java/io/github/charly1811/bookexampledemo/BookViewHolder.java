@@ -33,7 +33,7 @@ public class BookViewHolder extends RecyclerView.ViewHolder {
 
         int screenWidth = displayMetrics.widthPixels;
 
-        int width = screenWidth / 2;
+        int width = screenWidth / spanCount;
         int height = (approximateHeight * width) / approximateWidth;
 
         ViewGroup.LayoutParams params = itemView.getLayoutParams();
@@ -58,15 +58,13 @@ public class BookViewHolder extends RecyclerView.ViewHolder {
                 imageLink = medium;
             } else if (small != null) {
                 imageLink = small;
-            }
-            else if(thumbnail != null) {
+            } else if (thumbnail != null) {
                 imageLink = thumbnail;
-            }
-            else if(smallThumbnail != null) {
+            } else if (smallThumbnail != null) {
                 imageLink = smallThumbnail;
             }
 
-            imageLink = imageLink.replace("edge=curl","");
+            imageLink = imageLink.replace("edge=curl", "");
             System.out.println(imageLink);
 
             Glide.with(itemView.getContext())
