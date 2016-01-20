@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity implements SearchTask.Search
         }
 
         RecyclerView recyclerView = binding.booksGrid;
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT ? 2 : 3
-        );
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT ? 2 : 3);
         BookListAdapter adapter = new BookListAdapter(volumeList, gridLayoutManager.getSpanCount());
 
         recyclerView.setLayoutManager(gridLayoutManager);

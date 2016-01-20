@@ -57,7 +57,7 @@ public class SearchTask extends AsyncTask<String, Void, List<Volume>> {
     @Override
     protected void onPostExecute(List<Volume> volumes) {
         super.onPostExecute(volumes);
-        searchListener.onResult(volumes);
+        searchListener.onResult(volumes == null ? Collections.<Volume>emptyList() : volumes);
     }
 
     public interface SearchListener {
