@@ -1,12 +1,14 @@
 package io.github.charly1811.bookexampledemo;
 
 import android.content.res.Configuration;
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.google.api.services.books.model.Volume;
@@ -76,4 +78,5 @@ public class MainActivity extends AppCompatActivity implements SearchTask.Search
         volumeList.addAll(volumes);
         binding.booksGrid.getAdapter().notifyDataSetChanged();
     }
+
 }
